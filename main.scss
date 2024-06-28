@@ -1,0 +1,47 @@
+@import "imports/_variables", "imports/_mixins", "imports/_reset";
+
+.contenedor {
+  width: 90%;
+  max-width: 120em;
+
+  padding: 1em;
+  @include neo(1, 0.5em, 0.3em);
+}
+.contenedor .ul {
+  width: 100%;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.contenedor .li {
+  padding: 1em;
+  margin: 0 2em 0 0;
+  @include neo(1, 0.5em, 0.3em);
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.contenedor .li.activo {
+  background-color: lightskyblue;
+  color: white;
+}
+.contenedor .subcontenedor {
+  min-height: 10vh;
+
+  position: relative;
+}
+.contenedor .bloque {
+  margin: 1em;
+  padding: 1em;
+  position: absolute;
+  top: 2em;
+  @include neo(1, 0.5em, 0.3em);
+  opacity: 0;
+  transform: translateY(50%);
+  transition: all 0.5s ease;
+}
+.contenedor .bloque.activo {
+  opacity: 1;
+  transform: translateY(0%);
+}
